@@ -1,37 +1,38 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"math/rand"
 	"net/http"
-	"time"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "The Music Forecast")
-		net := New(4, 4, 4, 4, 0.005, Sigmoid, SigmoidPrime)
 
-		inData := [][]float64{{0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}}
-		targets := [][]float64{{0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}}
+	http.Handle("/", http.FileServer(http.Dir("client/build")))
 
-		rand.Seed(time.Now().UTC().UnixNano())
+	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	net := New(4, 4, 4, 4, 0.005, Sigmoid, SigmoidPrime)
 
-		for epochs := 0; epochs < 5000; epochs++ {
-			// Train the net on each example
-			for i, ix := range inData {
-				net.Train(ix, targets[i])
-			}
-		}
+	// 	inData := [][]float64{{0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}}
+	// 	targets := [][]float64{{0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}, {0.1, 0.4, 0.6, 0.5}}
 
-		pred := net.Predict(inData[0])
+	// 	rand.Seed(time.Now().UTC().UnixNano())
 
-		matrixPrint(pred)
-		fmt.Println(pred.Dims())
+	// 	for epochs := 0; epochs < 5000; epochs++ {
+	// 		// Train the net on each example
+	// 		for i, ix := range inData {
+	// 			net.Train(ix, targets[i])
+	// 		}
+	// 	}
 
-		// http.ServeFile(w, r, 'client/index.html')
-	})
+	// 	pred := net.Predict(inData[0])
+
+	// 	matrixPrint(pred)
+	// 	fmt.Println(pred.Dims())
+
+	// 	http.ServeFile(w, r, "client/build/index.html")
+	// })
+
+	//http.HandleFunc("/api/GetPlaylist?")
 
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }

@@ -23,4 +23,9 @@
 /vendor/
 /Godeps/
 
+### Output ###
+/bin/
+/client/node_modules
+/client/package-lock.json
+
 # End of https://www.toptal.com/developers/gitignore/api/go
