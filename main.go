@@ -32,7 +32,13 @@ func main() {
 	// 	http.ServeFile(w, r, "client/build/index.html")
 	// })
 
-	//http.HandleFunc("/api/GetPlaylist?")
+	http.HandleFunc("/api/playlist", func(w http.ResponseWriter, r *http.Request) {
+		query := r.URL.Query()
+		lat := query.Get("lat")
+		long := query.Get("long")
+		w.WriteHeader(200)
+		w.Write([]byte(lat + long))
+	})
 
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
