@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -34,11 +35,11 @@ func main() {
 
 	http.HandleFunc("/api/playlist", func(w http.ResponseWriter, r *http.Request) {
 		query := r.URL.Query()
-		lat := query.Get("lat")
-		long := query.Get("long")
-		w.WriteHeader(200)
-		w.Write([]byte(lat + long))
+		search := query.Get("search")
+		fmt.Println(search)
+		w.Write([]byte(`{"playlist": "37i9dQZF1DX4dyzvuaRJ0n"}`))
 	})
 
+	fmt.Println("Now forecasting on http://localhost:8081")
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
