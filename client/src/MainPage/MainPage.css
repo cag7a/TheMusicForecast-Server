@@ -1,8 +1,62 @@
 h1{
     text-align: center;
+    font-size: 60px;
 }
 
 .icon-container{
     text-align: center;
-    margin-top: 100px;
+    margin-top: -20px;
+    margin-left: -30px;
 }
+
+.input-container{
+    text-align: center;
+    margin-top: 0px;
+}
+
+.search{
+    border-radius: 20px;
+    background-color: darkgrey;
+    width: 50vw;
+    height: 40px;
+    outline: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    padding-left: 20px;
+}
+
+.music-icon{
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+
+
+.btn-container{
+    text-align: center;
+}
+
+.btn-search{
+    font-size: 20px;
+    margin-bottom: 60px;
+    background-color: black;
+    color: forestgreen;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: -28px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.btn-search:hover{
+    background-color: black;
+    color: greenyellow;
+    box-shadow: 0 0 10px forestgreen,
+                0 0 20px rgb(255 255 0 / 0.8),
+                0 0 35px rgb(255 255 0 / 0.7),
+                0 0 50px rgb(255 255 0 / 0.6);
+    border-color: #fff;
+}
+
