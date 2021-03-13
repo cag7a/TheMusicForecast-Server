@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { WiDaySunny, WiCloud, WiRainWind, WiDayCloudy} from 'weather-icons-react';
+import { WiDaySunny, WiStrongWind, WiRainWind, WiDayCloudy} from 'weather-icons-react';
 import "./MainPage.css";
 
 class MainPage extends Component {
@@ -9,7 +9,7 @@ class MainPage extends Component {
                 <h1>The Music Forecast</h1>
                 <div className = "icon-container">
                     <WiDaySunny size={200} color = '#000'/>
-                    <WiCloud size={200} color = '#000'/>
+                    <WiStrongWind size={200} color = '#000'/>
                     <WiRainWind size={200} color = '#000'/>
                     <WiDayCloudy size={200} color = '#000'/>
                 </div>
