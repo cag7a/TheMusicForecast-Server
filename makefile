@@ -1,10 +1,14 @@
 all:
-	cd client && npm install
-	go run *.go
+	make build
+	make server
 
 server:
 	go run *.go
 
+install:
+	cd client && npm install
+
 build:
-	cd client && npm install && npm run build
+	make install
+	cd client && npm run build
 	go build *.go
