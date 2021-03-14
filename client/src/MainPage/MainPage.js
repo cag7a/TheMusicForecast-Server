@@ -5,7 +5,6 @@ import Search from "./Search";
 import "./MainPage.css";
 
 
-
 class MainPage extends Component {
     render() {
         return (
