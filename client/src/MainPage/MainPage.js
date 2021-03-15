@@ -31,8 +31,9 @@ class MainPage extends Component{
         else{
             return (
                 <div id="PlayerPage" classname = "player-container">
-
-
+                    <iframe src={"https://open.spotify.com/embed/playlist/"+ this.state.playlistId}
+                    width="300" height="380" frameborder="0" allowtransparency="true"
+                     allow="encrypted-media"></iframe>
 
                 </div>
             )

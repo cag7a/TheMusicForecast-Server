@@ -13,7 +13,6 @@ export default function Search(props){
         e.preventDefault();
         fetch(`/api/playlist?search=${value}`).then((data) =>
          data.json()).then((data) => props.callback(data.playlist));
-        alert("You just searched: " + value); 
         setValue('');
     };
 
