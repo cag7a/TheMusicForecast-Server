@@ -30,12 +30,16 @@ class MainPage extends Component{
             }
         else{
             return (
-                <div id="PlayerPage" classname = "player-container">
-                    <iframe src = "playlist"
-                     src={"https://open.spotify.com/embed/playlist/"+ this.state.playlistId}
-                     frameborder="0" allowtransparency="true"
-                     allow="encrypted-media"></iframe>
-                     <WiDayCloudy  size={400} color = '#000'/>
+                <div id="PlayerPage" className = "player-container">
+                    <div className = "playlist">
+                        <iframe height = "400px" width = "400px"
+                        src={"https://open.spotify.com/embed/playlist/"+ this.state.playlistId}
+                        frameborder="0" allowtransparency="true"
+                        allow="encrypted-media"></iframe>
+                     </div>
+                     <div className = "weather-icon">
+                        <WiDayCloudy className="weather-icon"  size={200} color = '#000'/>
+                     </div>
 
                 </div>
             )

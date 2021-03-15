@@ -62,10 +62,21 @@ h1{
 }
 
 .player-container{
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "pl weather";
 }
 .playlist{
-    width: 500px;
-    height: 600px;
+    text-align: center;
+    margin-top: 30px;
+    grid-area: pl;
+}
+
+.weather-icon{
+    text-align: center;
+    margin-top: 30px;
+    grid-area: weather;
 }
 
