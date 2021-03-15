@@ -37,7 +37,7 @@ func main() {
 		query := r.URL.Query()
 		search := query.Get("search")
 		fmt.Println(search)
-		w.Write([]byte(`{"playlist": "37i9dQZF1DX4dyzvuaRJ0n", "weather": "rain"}`))
+		w.Write([]byte(`{"playlist": "37i9dQZF1DX2Nc3B70tvx0", "weather": "rain"}`))
 	})
 
 	fmt.Println("Now forecasting on http://localhost:8081")
