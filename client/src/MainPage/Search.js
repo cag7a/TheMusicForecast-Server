@@ -11,9 +11,14 @@ export default function Search(props){
 
     const handleSubmit = e => {
         e.preventDefault();
-        fetch(`/api/playlist?search=${value}`).then((data) =>
-         data.json()).then((data) => props.callback(data.playlist));
-        setValue('');
+        if (!value){
+            setValue('');
+        }
+        else{
+            fetch(`/api/playlist?search=${value}`).then((data) =>
+            data.json()).then((data) => props.callback(data.playlist));
+            setValue('');
+        }
     };
 
     const handleKeypress = e => {
