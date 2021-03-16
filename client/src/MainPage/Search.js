@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./MainPage.css";
 
 
-export default function Search(){
+export default function Search(props){
     const [value, setValue] = useState("");
 
     const handleChange = e => {
@@ -11,8 +11,14 @@ export default function Search(){
 
     const handleSubmit = e => {
         e.preventDefault();
-        alert("You just searched: " + value); 
-        setValue('');
+        if (!value){
+            setValue('');
+        }
+        else{
+            fetch(`/api/playlist?search=${value}`).then((data) =>
+            data.json()).then((data) => props.callback(data.playlist));
+            setValue('');
+        }
     };
 
     const handleKeypress = e => {

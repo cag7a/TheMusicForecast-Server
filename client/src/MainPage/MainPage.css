@@ -46,6 +46,7 @@ h1{
     border-radius: 20px;
     padding: 20px;
     margin-top: -28px;
+    border: 0px;
     outline: none;
     transition: box-shadow 0.3s ease-in-out, border-color 0.5s ease-in-out;
 }
@@ -58,5 +59,24 @@ h1{
                 0 0 35px rgb(255 255 0 / 0.7),
                 0 0 50px rgb(255 255 0 / 0.6);
     border-color: #fff;
+}
+
+.player-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "pl weather";
+}
+.playlist{
+    text-align: center;
+    margin-top: 30px;
+    grid-area: pl;
+}
+
+.weather-icon{
+    text-align: center;
+    margin-top: 30px;
+    grid-area: weather;
 }
 
